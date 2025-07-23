@@ -1,7 +1,7 @@
 import sqlite3
 
 class Database:
-  def __init__(self, db='kvstore.db'):
+  def __init__(self, db='/data/kvstore.db'):
     self._conn = sqlite3.connect(db, check_same_thread=False)
     self._create_table()
 
