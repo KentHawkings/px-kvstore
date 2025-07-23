@@ -57,7 +57,6 @@ You can interact with the key-value store using any HTTP client, such as `curl`.
     curl -X DELETE http://localhost:8000/your_key
     ```
 
-
 ## Missing/Incomplete Features
 
 ### Persistence
