@@ -2,7 +2,6 @@ import unittest
 import json
 import http.client
 import threading
-from unittest.mock import patch
 from kvstore.server import run_server
 from kvstore.server.server import StoreHTTPRequestHandler
 
@@ -73,6 +72,6 @@ class TestStoreHTTPServer(unittest.TestCase):
     self.client.request('GET', '/store/key_to_delete')
     response = self.client.getresponse()
     self.assertEqual(response.status, 404)
-    
+
 if __name__ == '__main__':
     unittest.main() 
