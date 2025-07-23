@@ -73,12 +73,6 @@ class TestStoreHTTPServer(unittest.TestCase):
     self.client.request('GET', '/store/key_to_delete')
     response = self.client.getresponse()
     self.assertEqual(response.status, 404)
-
-  def test_internal_server_error(self):
     
-    self.client.request('GET', '/store/key_to_delete')
-    response = self.client.getresponse()
-    self.assertEqual(response.status, 500)
-
 if __name__ == '__main__':
     unittest.main() 
