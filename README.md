@@ -56,3 +56,8 @@ You can interact with the key-value store using any HTTP client, such as `curl`.
     ```sh
     curl -X DELETE http://localhost:8000/your_key
     ```
+
+
+## Incomplete Features
+
+While I've implemented a DB to allow for persistence our our key-value store I wasn't able to finish the implementation in time. As such the app defaults to using the in-memory DB which means data doesn't actually persist between runs. I don't think this would take long to fix at all but it has knock-on effects on the tests and requires updating the makefile to ensure our directory is mounted.
