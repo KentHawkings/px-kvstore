@@ -31,7 +31,7 @@ def _handle_internal_server_error(func):
     return wrapper
 
 class StoreHTTPRequestHandler(BaseHTTPRequestHandler):
-    _store = KeyValueStore(db=Database(db=':memory:'), cache=LRUCache(1000))
+    _store = KeyValueStore(db=Database(), cache=LRUCache(1000))
     API_BASE_PATH = '/store/'
 
     def handle_exception(self, e):
