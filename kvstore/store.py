@@ -3,7 +3,7 @@ import threading
 class KeyValueStore:
     def __init__(self):
         self._data = {}
-        self._lock = threading.Lock()
+        self._lock = threading.RLock()
 
     def __getitem__(self, key):
         with self._lock:
