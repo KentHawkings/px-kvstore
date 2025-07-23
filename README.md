@@ -58,6 +58,12 @@ You can interact with the key-value store using any HTTP client, such as `curl`.
     ```
 
 
-## Incomplete Features
+## Missing/Incomplete Features
+
+### Persistence
 
 While I've implemented a DB to allow for persistence our our key-value store I wasn't able to finish the implementation in time. As such the app defaults to using the in-memory DB which means data doesn't actually persist between runs. I don't think this would take long to fix at all but it has knock-on effects on the tests and requires updating the makefile to ensure our directory is mounted.
+
+### Architecture
+
+Overall the abstraction of the Database, Cache and Store could probably serve to be improved. Additionally there should be some mechanism whereby the story in the webserver can also be configured (using something like Depedency Injection) for greater flexibility and testability.
