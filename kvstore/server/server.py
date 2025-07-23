@@ -1,5 +1,6 @@
 import json
 from http.server import BaseHTTPRequestHandler, HTTPServer
+from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from functools import wraps
 from kvstore.store import KeyValueStore
 
@@ -71,4 +72,8 @@ def run_server(server_class=HTTPServer, handler_class=StoreHTTPRequestHandler, p
     server_address = ('', port)
     httpd = server_class(server_address, handler_class)
     print(f'Starting httpd on port {port}...')
-    httpd.serve_forever() 
+    httpd.serve_forever() def run_server(server_class=ThreadingHTTPServer, host='', port=8000):
+    server_address = (host, port)
+    webserver = server_class(server_address, StoreHTTPRequestHandler)
+    print(f'Starting webserver on port {port}...')
+    webserver.serve_forever() 
