@@ -1,0 +1,17 @@
+[tool.poetry]
+package-mode = false
+
+[project]
+name = "px-kvstore"
+version = "0.1.0"
+description = "A simple key-value store server"
+authors = [
+    {name = "Kent Hawkings", email = "kenthawkings@proton.me"}
+]
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
