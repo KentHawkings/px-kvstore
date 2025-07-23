@@ -9,10 +9,12 @@ docker-build:
 	docker build -t px-kvstore:latest .
 
 docker-run: docker-build
-	echo "Running server in detached Docker container..."
-	docker run -d --name kvstore-app -p 8000:8000 px-kvstore:latest
+	echo "Ensuring 'kvstore-data' volume exists..."
+	docker volume create kvstore-data
+	echo "Running server with a persistent named volume..."
+	docker run -d --name kvstore-app -p 8000:8000 -v kvstore-data:/data px-kvstore:latest
 
 docker-stop:
 	echo "Stopping and removing Docker container..."
-	docker stop kvstore-app || true
-	docker rm kvstore-app || true 
+	docker stop kvstore-app
+	docker rm kvstore-app 
