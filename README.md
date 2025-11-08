@@ -1,6 +1,4 @@
-# PhysicsX Tech Test Submission by Kent Hawkings
-
-This project is a simple key-value store built in Python, exposing a RESTful HTTP interface for CRUD operations. The entire implementation relies solely on Python's standard library, with no external dependencies.
+A simple key-value store built in Python, exposing a RESTful HTTP interface for CRUD operations. The entire implementation relies solely on Python's standard library, with no external dependencies.
 
 ## Getting Started
 
